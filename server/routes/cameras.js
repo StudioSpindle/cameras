@@ -6,6 +6,7 @@ const csv2json = require("csv2json"); // 18.4 kB
 const firstThreeDigits = new RegExp(/[\s]*\d{3}/);
 
 cameras.get("/", function(_, res){
+  res.contentType("application/json");
   fs.createReadStream('./data/cameras-defb.csv')
     .pipe(map(addCameraNumber))
     .pipe(csv2json({
