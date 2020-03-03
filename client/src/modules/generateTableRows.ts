@@ -1,7 +1,7 @@
-import { DataRow } from './shared.types'
+import { DataRow } from '../shared.types'
 
 export default function (data: DataRow[], destElement: HTMLElement) {
-  const template = document.createElement('template');
+  const template: HTMLTemplateElement = document.createElement('template');
 
   data.forEach((dataRow: DataRow) => {
     template.innerHTML += `

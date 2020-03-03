@@ -12,9 +12,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^13.7.7",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@types/googlemaps": "^3.39.3",
+    "@types/load-google-maps-api": "^2.0.1",
+    "dotenv-webpack": "^1.7.0",
+    "load-google-maps-api": "^2.0.1"
   }
 }

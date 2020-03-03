@@ -1,5 +1,11 @@
 # 🚀 INFI Security Cameras Utrecht
 
+In order for the Google Maps API to run place a `.env` file in `./client/`, with the following contents:
+
+```
+API_KEY_GOOGLE_MAPS=<Your-Key>
+```
+
 To run this project open a terminal with two tabs. 
 
 In the first tab navigate (cd) to the folder `./server`, and run:
@@ -24,3 +30,4 @@ Then open the index file in your browser.
 - [ ] Make production build robust (i.e. JSMin)
 - [ ] Sourcemaps for development (separate webpack config)
 - [ ] Deploy it to server
+- [ ] Add unhappy flow

@@ -1,4 +1,4 @@
-export default function <T>(url: string): Promise<T> {
+export default async function <T>(url: string): Promise<T> {
   return fetch(url)
     .then(response => {
       if (!response.ok) {
