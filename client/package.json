@@ -19,7 +19,8 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "@types/googlemaps": "^3.39.3",
+    "@google/maps": "^1.1.0",
+    "@types/google__maps": "^0.5.12",
     "@types/load-google-maps-api": "^2.0.1",
     "dotenv-webpack": "^1.7.0",
     "load-google-maps-api": "^2.0.1"

@@ -1,22 +1,16 @@
 const loadGoogleMapsApi = require('load-google-maps-api');
 import { DataRow } from '../shared.types';
 
-interface MarkerType {
-  lat: Number;
-  lng: Number;
-}
-
-export default async function(cameras: DataRow[]) {
-  const utrecht: MarkerType = { lat: 52.090736, lng: 5.121420 };
-  const mapCenter: MarkerType = utrecht;
+export default async function(cameras: DataRow[]): Promise<typeof google.maps> {
+  const utrecht: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 52.090736, lng: 5.121420 };
+  const mapCenter: google.maps.LatLng | google.maps.LatLngLiteral = utrecht;
   const mapElement: HTMLElement = document.getElementById('map')!;
 
-  loadGoogleMapsApi({ key: process.env.API_KEY_GOOGLE_MAPS })
-    .then(function(googleMaps: any) {
-      const map = new googleMaps.Map(mapElement, {
-        center: mapCenter,
-        zoom: 14
-      });
+  return loadGoogleMapsApi({ key: process.env.API_KEY_GOOGLE_MAPS })
+    .then(function(googleMaps: typeof google.maps) {
+      const mapOptions: google.maps.MapOptions = { center: mapCenter, zoom: 14 }
+      const map = new googleMaps.Map(mapElement, mapOptions);
+
       cameras.forEach(({
         Camera,
         Latitude,
@@ -35,7 +29,7 @@ export default async function(cameras: DataRow[]) {
           infowindow.open(map, marker)
         });
       })
-    }).catch((err: any) => {
+    }).catch((err: string) => {
       throw new Error(err);
     });
 }

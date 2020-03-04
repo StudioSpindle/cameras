@@ -9,7 +9,7 @@ const column5: HTMLElement = document.getElementById('column5')!;
 const column3and5: HTMLElement = document.getElementById('column15')!;
 const columnRemainder: HTMLElement = document.getElementById('columnOther')!;
 
-export default function (cameras: DataRow[]) {
+export default function (cameras: DataRow[]): void {
   let camerasDivisableBy3: DataRow[] = [];
   let camerasDivisableBy5: DataRow[] = [];
   let camerasDivisableBy3and5: DataRow[] = [];
