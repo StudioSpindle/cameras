@@ -10,17 +10,37 @@ schemes:
 paths:
   /cameras:
     get:
-      summary: Returns a list cameras.
+      summary: Can be used to get ALL camera's
       produces:
         - application/json
       responses:
         200:
-          description: Returns a list of cameras
+          description: Returns a list of cameras.
           schema:
-            $ref: '#/components/schemas/Camera'
+            $ref: '#/components/schemas/Cameras'
+  /cameras/{camera_id}:
+    get:
+      parameters:
+        - in: path
+          name: camera_id
+          type: integer
+          required: true
+          description: Camera id 
+      summary: Can be used to search for a specific camera id
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Returns a single camera or multiple camera's by id
+          schema:
+            $ref: '#/components/schemas/Cameras'
 
 components:
   schemas:
+    Cameras:
+      type: array
+      items: 
+        $ref: '#/components/schemas/Camera'
     Camera:
       type: object
       properties:
