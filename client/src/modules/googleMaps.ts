@@ -1,5 +1,5 @@
 const loadGoogleMapsApi = require('load-google-maps-api');
-import { DataRow } from '../shared.types';
+import { DataRow } from '../../shared.types';
 
 export default async function(cameras: DataRow[]): Promise<typeof google.maps> {
   const utrecht: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 52.090736, lng: 5.121420 };

@@ -1,5 +1,5 @@
 import generateTableRows from './generateTableRows';
-import { DataRow } from '../shared.types';
+import { DataRow } from '../../shared.types';
 
 const divisableBy3 = (number: number): boolean => (number % 3 === 0);
 const divisableBy5 = (number: number): boolean => (number % 5 === 0);
